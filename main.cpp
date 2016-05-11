@@ -157,10 +157,14 @@ bool IsEmoji(const char* ch, uint32_t len, uint32_t* pos)
   if(len > 3 && buf[0] == 0xF0 && buf[1] == 0x9F && buf[2] == 0x8C && (buf[3] >= 0xB7 && buf[3] <= 0xBF) )
     return true;
 
-  if(len > 3 && buf[0] == 0xF0 && buf[1] == 0x9F && buf[2] == 0x8D && ((buf[3] >= 0x80 && buf[3] < = 0x8A) || (buf[3] >= 0x8C && buf[3] <= 0x8F) || \
+  if(len > 3 && buf[0] == 0xF0 && buf[1] == 0x9F && buf[2] == 0x8D && ((buf[3] >= 0x80 && buf[3] <= 0x8A) || (buf[3] >= 0x8C && buf[3] <= 0x8F) || \
      (buf[3] >= 0x80 && buf[3] <= 0xBB)))
     return true;
-  
+
+  if(len > 3 && buf[0] == 0xF0 && buf[1] == 0x9F && buf[2] == 0x8E && ( (buf[3] >= 0x80 && buf[3] <= 0x93) || (buf[3] >= 0xA0 && buf[3] <= 0xBF) ))
+    return true;
+
+
 
 
   return false;
